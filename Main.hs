@@ -29,6 +29,7 @@ terminalPage window notebook = do
   _ <- terminalForkCommand vte Nothing (Nothing :: Maybe [String]) Nothing Nothing False False False
   font <- fontDescriptionFromString ("DejaVu Sans Mono 10" :: String)
   terminalSetFont vte font
+  terminalSetScrollbackLines vte 10000
 
   containerAdd scrolled vte
 
